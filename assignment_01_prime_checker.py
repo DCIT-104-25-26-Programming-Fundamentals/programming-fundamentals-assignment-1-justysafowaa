@@ -35,3 +35,24 @@
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
 
+def check_prime(num):
+    if num < 2:
+        return False
+    
+    for i in range(2, num):
+        if num % i == 0:
+            return False
+            
+    return True
+
+if __name__ == "__main__":
+    try:
+        user_input = int(input("Enter a number: "))
+        
+        if check_prime(user_input):
+            print(f"{user_input} is a prime number.")
+        else:
+            print(f"{user_input} is NOT a prime number.")
+            
+    except ValueError:
+        print("Invalid input. Please enter a whole number.")
